@@ -4,6 +4,8 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+// DATABASE_URL="postgresql://postgres:123@localhost:5433/tourism_db?schema=public"
+
 // schema.prisma
 generator client {
   provider = "prisma-client-js"
@@ -32,14 +34,16 @@ model Indicator {
 }
 
 model Country {
-  id           String       @id @db.VarChar(20)
-  name         String       @db.VarChar(100)
-  iso3code     String?      @db.VarChar(10) // Removido @unique e aumentado tamanho
-  tourismData  TourismData[]
-  tierListItems TierListItem[]
+  id               String            @id @db.VarChar(20)
+  name             String            @db.VarChar(100)
+  iso3code         String           @unique @db.VarChar(10)
+  tourismData      TourismData[]
+  tierListItems    TierListItem[]
   visitedCountries VisitedCountry[]
+
   @@map("countries")
 }
+
 
 model TourismData {
   id           Int      @id @default(autoincrement())

@@ -4,7 +4,7 @@ import axios from 'axios';
 const prisma = new PrismaClient();
 
 async function fetchWorldBankData(indicatorId: string) {
-  const baseUrl = `https://api.worldbank.org/v2/country/all/indicator/${indicatorId}?format=json&per_page=5000`;
+  const baseUrl = `https://api.worldbank.org/v2/country/all/indicator/${indicatorId}?format=json&per_page=17290`;
   let allData: any[] = [];
   let page = 1;
   let totalPages = 1;
@@ -65,18 +65,23 @@ async function main() {
       // Dentro do loop principal, modifique a criação do país:
       const iso3code = getValidIso3code(item.countryiso3code);
 
-      await prisma.country.upsert({
-      where: { id: item.country.id },
-      update: {
-        name: item.country.value,
-        ...(iso3code && { iso3code }) // Atualiza iso3code apenas se existir
-      },
-      create: {
-        id: item.country.id,
-        name: item.country.value,
-        iso3code: iso3code || 'XXX' // Valor padrão para códigos inválidos
+      // Ignora países com código inválido ou que são 'XXX'
+      if (iso3code === 'XXX') {
+        continue;
       }
-     });
+
+      await prisma.country.upsert({
+        where: { id: item.country.id },
+        update: {
+          name: item.country.value,
+          ...(iso3code && { iso3code }) // Atualiza iso3code apenas se existir
+        },
+        create: {
+          id: item.country.id,
+          name: item.country.value,
+          iso3code: iso3code || 'XXX' // Valor padrão para códigos inválidos
+        }
+      });
 
       // Inserir dados de turismo (apenas se houver valor)
       if (item.value !== null) {

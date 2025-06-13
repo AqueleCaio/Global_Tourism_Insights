@@ -1,0 +1,37 @@
+.chartContainer {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.chartTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.chartControls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.controlButton {
+  padding: 0.5rem;
+  color: #4b5563;
+  border-radius: 9999px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.controlButton:hover {
+  background-color: #f3f4f6;
+  color: #1d4ed8;
+}

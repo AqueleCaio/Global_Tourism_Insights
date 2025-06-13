@@ -1,0 +1,40 @@
+.container {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.buttonActive {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+}
+
+.buttonInactive {
+  background-color: #e5e7eb;
+  color: #4b5563;
+  border: none;
+}
+
+.buttonInactive:hover {
+  background-color: #d1d5db;
+}

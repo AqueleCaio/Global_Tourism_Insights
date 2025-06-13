@@ -1,0 +1,49 @@
+.container {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.buttonActive {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.buttonActive:hover {
+  background-color: #2563eb;
+}
+
+.buttonInactive {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  border-color: #e5e7eb;
+}
+
+.buttonInactive:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}

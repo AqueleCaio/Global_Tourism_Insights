@@ -1,0 +1,15 @@
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #4b5563;
+  font-size: 1rem;
+}

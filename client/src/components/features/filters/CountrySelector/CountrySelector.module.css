@@ -1,0 +1,74 @@
+.container {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.selectorContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.select {
+  flex-grow: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+.addButton {
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: #1d4ed8;
+}
+
+.selectedCountries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.countryTag {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.countryTag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #d0eaff;
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin: 4px;
+  font-size: 0.9rem;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+}
+
+.removeButton:hover {
+  color: blue;
+}
